@@ -7,6 +7,7 @@
   <style>
     :root {
       --orange: #FF9100;
+      --safety: #ffc107;
       --charcoal: #1f1f1f;
       --charcoal-soft: #2a2a2a;
       --white: #ffffff;
@@ -34,10 +35,26 @@
     }
 
     .hero {
-      background: linear-gradient(145deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
+      background:
+        linear-gradient(145deg, rgba(31, 31, 31, 0.95) 0%, rgba(42, 42, 42, 0.96) 100%),
+        repeating-linear-gradient(135deg, rgba(255, 193, 7, 0.14) 0 10px, rgba(255, 193, 7, 0.04) 10px 20px);
       color: var(--white);
       padding: 2.5rem 1.25rem;
       border-bottom: 4px solid var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: -42px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 193, 7, 0.35);
+      transform: rotate(-8deg);
     }
 
     .container {
@@ -86,6 +103,22 @@
       color: var(--charcoal);
     }
 
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #5b4a00;
+      background: #fff3c7;
+      border: 1px solid #f2d77e;
+      border-radius: 999px;
+      padding: 0.3rem 0.65rem;
+      margin-bottom: 0.7rem;
+    }
+
     .table-wrap {
       overflow-x: auto;
     }
@@ -107,7 +140,7 @@
     }
 
     th {
-      background: #f8f9fb;
+      background: #fff7e8;
       color: #333;
       font-weight: 700;
     }
@@ -118,7 +151,9 @@
 
     .cta-card {
       border: 2px solid var(--orange);
-      background: linear-gradient(180deg, #fffaf2 0%, #fff 100%);
+      background:
+        linear-gradient(180deg, #fffaf2 0%, #fff 100%),
+        repeating-linear-gradient(90deg, rgba(255, 193, 7, 0.06) 0 24px, rgba(255, 193, 7, 0) 24px 48px);
     }
 
     .cta-card p {
@@ -150,6 +185,12 @@
       transform: translateY(-1px);
       box-shadow: 0 8px 22px rgba(255, 145, 0, 0.35);
       outline: none;
+    }
+
+    .fine-print {
+      margin-top: 0.8rem;
+      font-size: 0.84rem;
+      color: #666;
     }
 
     footer {
@@ -194,7 +235,9 @@
     <main>
       <div class="container content-grid">
         <section class="card" aria-labelledby="price-index-heading">
+          <span class="badge">Built for Homeowners</span>
           <h2 id="price-index-heading">2026 Labor Estimates</h2>
+          <p style="margin-top: 0; color: #4a4a4a;">These rates are tuned slightly below average so you can request a competitive quote fast.</p>
           <div class="table-wrap">
             <table>
               <thead>
@@ -206,15 +249,43 @@
               <tbody>
                 <tr>
                   <td>10x10 Concrete Pad</td>
-                  <td>$1,200 - $1,800</td>
+                  <td>$1,050 - $1,650</td>
                 </tr>
                 <tr>
                   <td>Egress Window Install</td>
-                  <td>$3,500 - $5,200</td>
+                  <td>$3,200 - $4,900</td>
                 </tr>
                 <tr>
                   <td>General Labor (Hourly)</td>
-                  <td>$35 - $50/hr</td>
+                  <td>$30 - $46/hr</td>
+                </tr>
+                <tr>
+                  <td>Asphalt Shingle Roof (per sq.)</td>
+                  <td>$340 - $455</td>
+                </tr>
+                <tr>
+                  <td>Vinyl Siding Install (1,000 sq ft)</td>
+                  <td>$5,200 - $7,400</td>
+                </tr>
+                <tr>
+                  <td>Deck Build (12x16 treated lumber)</td>
+                  <td>$6,700 - $9,600</td>
+                </tr>
+                <tr>
+                  <td>Kitchen Backsplash Tile (labor)</td>
+                  <td>$850 - $1,450</td>
+                </tr>
+                <tr>
+                  <td>Gutter Replacement (150 linear ft)</td>
+                  <td>$1,050 - $1,750</td>
+                </tr>
+                <tr>
+                  <td>Interior Drywall Repair (per room)</td>
+                  <td>$420 - $980</td>
+                </tr>
+                <tr>
+                  <td>Bathroom Vanity + Faucet Swap</td>
+                  <td>$480 - $1,150</td>
                 </tr>
               </tbody>
             </table>
@@ -223,8 +294,9 @@
 
         <aside class="card cta-card" aria-labelledby="quote-heading">
           <h2 id="quote-heading">Need a Verified Local Quote?</h2>
-          <p>Connect with pre-screened pros in Martin &amp; Faribault County instantly.</p>
+          <p>Connect with pre-screened pros in Martin &amp; Faribault County for concrete, roofing, siding, and remodel work.</p>
           <a class="cta-button" href="[INSERT_HOMEADVISOR_LINK_HERE]">Find a Pro &amp; Get My Quote</a>
+          <p class="fine-print">Most homeowners request 2-3 quotes to lock in the best rate.</p>
         </aside>
       </div>
     </main>
