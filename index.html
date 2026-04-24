@@ -1,310 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026 Southern MN Contractor Rate Guide</title>
+  <title>2026 Southern MN Contractor Rates</title>
+  <meta name="description" content="Local 2026 contractor labor estimates for Fairmont and Blue Earth homeowners planning spring projects." />
   <style>
     :root {
-      --orange: #FF9100;
-      --safety: #ffc107;
-      --charcoal: #1f1f1f;
-      --charcoal-soft: #2a2a2a;
+      --safety-orange: #FF9100;
+      --charcoal: #1f2329;
       --white: #ffffff;
-      --light: #f4f5f7;
-      --border: #d8dbe0;
-      --max-width: 980px;
+      --gray: #d7dde5;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--light);
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--charcoal);
-      line-height: 1.5;
+      background: #ffffff;
+      min-height: 100vh;
     }
 
     .page {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
     }
 
     .hero {
-      background:
-        linear-gradient(145deg, rgba(31, 31, 31, 0.95) 0%, rgba(42, 42, 42, 0.96) 100%),
-        repeating-linear-gradient(135deg, rgba(255, 193, 7, 0.14) 0 10px, rgba(255, 193, 7, 0.04) 10px 20px);
+      background: var(--charcoal);
       color: var(--white);
-      padding: 2.5rem 1.25rem;
-      border-bottom: 4px solid var(--orange);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -48px;
-      top: -42px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      border: 2px dashed rgba(255, 193, 7, 0.35);
-      transform: rotate(-8deg);
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
+      border-bottom: 3px solid var(--safety-orange);
+      padding: 1rem 1rem 0.85rem;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(1.85rem, 4vw, 2.8rem);
-      line-height: 1.15;
-      letter-spacing: 0.01em;
+      font-size: clamp(1.45rem, 4.8vw, 2rem);
+      line-height: 1.1;
     }
 
-    .subheading {
-      margin-top: 0.8rem;
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      color: #eef1f5;
-      max-width: 42ch;
+    .subhead {
+      margin: 0.4rem 0 0;
+      font-size: clamp(0.95rem, 2.9vw, 1.05rem);
+      color: #f0f3f7;
+    }
+
+    .cta-bar {
+      padding: 0.8rem 1rem;
+      background: #fff8ef;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    .cta-title {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.05rem, 3.4vw, 1.2rem);
+      color: var(--charcoal);
+      font-weight: 800;
+    }
+
+    .cta-sub {
+      margin: 0 0 0.6rem;
+      font-size: 0.94rem;
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--safety-orange);
+      color: #1b1f24;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 12px;
+      min-height: 54px;
+      padding: 0.9rem 0.75rem;
     }
 
     main {
-      flex: 1;
-      padding: 1.25rem;
-    }
-
-    .content-grid {
+      padding: 0.75rem 1rem;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      align-items: start;
+      align-content: start;
     }
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    .panel {
+      border: 1px solid var(--gray);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
     }
 
-    .card h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1.25rem;
-      color: var(--charcoal);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #5b4a00;
-      background: #fff3c7;
-      border: 1px solid #f2d77e;
-      border-radius: 999px;
-      padding: 0.3rem 0.65rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
+    .panel h2 {
+      margin: 0;
+      padding: 0.75rem;
+      background: #f3f5f8;
+      font-size: 1rem;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
+      font-size: 0.96rem;
     }
 
-    th,
     td {
-      padding: 0.85rem 0.75rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.98rem;
+      padding: 0.7rem 0.75rem;
+      border-top: 1px solid var(--gray);
+      vertical-align: top;
     }
 
-    th {
-      background: #fff7e8;
-      color: #333;
+    td:last-child {
       font-weight: 700;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .cta-card {
-      border: 2px solid var(--orange);
-      background:
-        linear-gradient(180deg, #fffaf2 0%, #fff 100%),
-        repeating-linear-gradient(90deg, rgba(255, 193, 7, 0.06) 0 24px, rgba(255, 193, 7, 0) 24px 48px);
-    }
-
-    .cta-card p {
-      margin: 0 0 1rem;
-      color: #383838;
-      font-size: 1rem;
-    }
-
-    .cta-button {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
-      background: var(--orange);
-      color: #1f1f1f;
-      font-weight: 800;
-      font-size: 1.06rem;
-      padding: 1rem 1.15rem;
-      border-radius: 12px;
-      border: 2px solid #d97c00;
-      box-shadow: 0 6px 18px rgba(255, 145, 0, 0.3);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      min-height: 56px;
-      line-height: 1.2;
-    }
-
-    .cta-button:hover,
-    .cta-button:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 22px rgba(255, 145, 0, 0.35);
-      outline: none;
-    }
-
-    .fine-print {
-      margin-top: 0.8rem;
-      font-size: 0.84rem;
-      color: #666;
+      text-align: right;
+      white-space: nowrap;
     }
 
     footer {
-      background: #151515;
-      color: #f4f4f4;
-      font-size: 0.92rem;
-      padding: 1rem 1.25rem 1.35rem;
-      border-top: 3px solid var(--orange);
+      border-top: 1px solid var(--gray);
+      padding: 0.7rem 1rem 0.9rem;
+      font-size: 0.84rem;
+      color: #404955;
+      background: #fafbfc;
     }
 
-    @media (min-width: 760px) {
-      main {
-        padding: 1.6rem 1.25rem 2rem;
-      }
-
-      .content-grid {
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 1.1rem;
-      }
-
-      .card {
-        padding: 1.15rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cta-button {
-        transition: none;
-      }
+    @media (min-width: 860px) {
+      .page { max-width: 980px; margin: 0 auto; }
+      .hero, .cta-bar, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="hero">
-      <div class="container">
-        <h1>2026 Southern MN Contractor Rate Guide</h1>
-        <p class="subheading">Fairmont • Blue Earth • Kiester. Get the local market average before you hire.</p>
-      </div>
+      <h1>2026 Southern MN Contractor Rates</h1>
+      <p class="subhead">Fairmont / Blue Earth - Get the local average rates before you hire.</p>
     </header>
 
-    <main>
-      <div class="container content-grid">
-        <section class="card" aria-labelledby="price-index-heading">
-          <span class="badge">Built for Homeowners</span>
-          <h2 id="price-index-heading">2026 Labor Estimates</h2>
-          <p style="margin-top: 0; color: #4a4a4a;">These rates are tuned slightly below average so you can request a competitive quote fast.</p>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Project Type</th>
-                  <th scope="col">Estimated Cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>10x10 Concrete Pad</td>
-                  <td>$1,050 - $1,650</td>
-                </tr>
-                <tr>
-                  <td>Egress Window Install</td>
-                  <td>$3,200 - $4,900</td>
-                </tr>
-                <tr>
-                  <td>General Labor (Hourly)</td>
-                  <td>$30 - $46/hr</td>
-                </tr>
-                <tr>
-                  <td>Asphalt Shingle Roof (per sq.)</td>
-                  <td>$340 - $455</td>
-                </tr>
-                <tr>
-                  <td>Vinyl Siding Install (1,000 sq ft)</td>
-                  <td>$5,200 - $7,400</td>
-                </tr>
-                <tr>
-                  <td>Deck Build (12x16 treated lumber)</td>
-                  <td>$6,700 - $9,600</td>
-                </tr>
-                <tr>
-                  <td>Kitchen Backsplash Tile (labor)</td>
-                  <td>$850 - $1,450</td>
-                </tr>
-                <tr>
-                  <td>Gutter Replacement (150 linear ft)</td>
-                  <td>$1,050 - $1,750</td>
-                </tr>
-                <tr>
-                  <td>Interior Drywall Repair (per room)</td>
-                  <td>$420 - $980</td>
-                </tr>
-                <tr>
-                  <td>Bathroom Vanity + Faucet Swap</td>
-                  <td>$480 - $1,150</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+    <section class="cta-bar" aria-labelledby="quote-heading">
+      <h2 id="quote-heading" class="cta-title">Need a Verified Local Quote?</h2>
+      <p class="cta-sub">Connect with pre-screened pros in Martin &amp; Faribault County instantly.</p>
+      <a class="cta-button" href="[INSERT_HOMEADVISOR_LINK_HERE]" rel="nofollow sponsored">Find a Pro &amp; Get My Quote</a>
+    </section>
 
-        <aside class="card cta-card" aria-labelledby="quote-heading">
-          <h2 id="quote-heading">Need a Verified Local Quote?</h2>
-          <p>Connect with pre-screened pros in Martin &amp; Faribault County for concrete, roofing, siding, and remodel work.</p>
-          <a class="cta-button" href="[INSERT_HOMEADVISOR_LINK_HERE]">Find a Pro &amp; Get My Quote</a>
-          <p class="fine-print">Most homeowners request 2-3 quotes to lock in the best rate.</p>
-        </aside>
-      </div>
+    <main>
+      <section class="panel" aria-labelledby="price-index-heading">
+        <h2 id="price-index-heading">2026 Labor Estimates</h2>
+        <table aria-label="2026 Labor Estimates">
+          <tbody>
+            <tr>
+              <td>10x10 Concrete Pad</td>
+              <td>$1,200 - $1,500</td>
+            </tr>
+            <tr>
+              <td>12x16 Storage Shed Build</td>
+              <td>$2,800 - $4,200</td>
+            </tr>
+            <tr>
+              <td>Egress Window Install</td>
+              <td>$3,500 - $4,400</td>
+            </tr>
+            <tr>
+              <td>General Labor (Hourly)</td>
+              <td>$35 - $45/hr</td>
+            </tr>
+            <tr>
+              <td>Asphalt Shingle Roof Repair (100 sq ft)</td>
+              <td>$450 - $900</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
     <footer>
-      <div class="container">
-        Real-time data updated for the April 2026 Blue Earth Garage Sale weekend. Powered by local Southern MN labor metrics.
-      </div>
+      Real-time data updated for the April 2026 Blue Earth Garage Sale weekend. Powered by local Southern MN labor metrics.
     </footer>
   </div>
 </body>
