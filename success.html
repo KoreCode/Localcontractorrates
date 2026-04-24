@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Received | localcontractorrates.com</title>
+  <meta name="description" content="Confirmation page for localcontractorrates.com project estimate requests." />
+  <style>
+    :root {
+      --orange: #FF8C00;
+      --charcoal: #333333;
+      --white: #ffffff;
+      --slate: #eef1f4;
+      --ink: #1f1f1f;
+      --border: #d7dce1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", "Montserrat", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 45%);
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+    }
+
+    .confirmation-card {
+      width: min(680px, 100%);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(15, 24, 36, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card-header {
+      background: var(--charcoal);
+      color: var(--white);
+      border-bottom: 6px solid var(--orange);
+      padding: 1.25rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -35deg,
+        rgba(255, 140, 0, 0.12) 0,
+        rgba(255, 140, 0, 0.12) 16px,
+        rgba(255, 255, 255, 0.04) 16px,
+        rgba(255, 255, 255, 0.04) 32px
+      );
+      pointer-events: none;
+    }
+
+    .card-header h1 {
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      font-size: clamp(1.55rem, 6vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: 0.015em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .card-body {
+      padding: 1.4rem 1.15rem 1.2rem;
+      background: linear-gradient(180deg, var(--slate) 0%, #ffffff 100%);
+    }
+
+    .card-body p {
+      margin: 0;
+      font-size: clamp(1rem, 3.2vw, 1.1rem);
+      line-height: 1.6;
+      color: #2e3842;
+      font-weight: 600;
+    }
+
+    .card-footer {
+      padding: 1rem 1.15rem 1.25rem;
+      font-size: 0.94rem;
+      color: #4d5660;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    .card-footer a {
+      color: var(--charcoal);
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    .card-footer a:hover,
+    .card-footer a:focus {
+      border-bottom-color: var(--orange);
+      outline: none;
+    }
+
+    @media (min-width: 700px) {
+      body {
+        padding: 2rem;
+      }
+
+      .card-header {
+        padding: 1.5rem 1.4rem;
+      }
+
+      .card-body {
+        padding: 1.7rem 1.5rem 1.4rem;
+      }
+
+      .card-footer {
+        padding: 1.15rem 1.5rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="confirmation-card" aria-labelledby="success-title">
+    <header class="card-header">
+      <h1 id="success-title">Request Received!</h1>
+    </header>
+
+    <section class="card-body" aria-label="confirmation message">
+      <p>Thank you! Your request has been received. A Fairmont or Blue Earth area professional will reach out via text shortly with your specific 2026 project estimate.</p>
+    </section>
+
+    <footer class="card-footer">
+      Return to <a href="https://localcontractorrates.com">localcontractorrates.com</a>
+    </footer>
+  </main>
+</body>
+</html>
